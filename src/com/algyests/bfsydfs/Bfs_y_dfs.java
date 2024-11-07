@@ -55,8 +55,13 @@ public class Bfs_y_dfs {
         List<Character> listaRecorrido = new LinkedList<Character>();
 
         for (Character nodoAdyacente : grafo.get(nodoActual-'A'))
+        {
             if (!nodosVisitados[nodoAdyacente-'A'])
+            {
+                listaRecorrido.add(nodoAdyacente);
                 listaRecorrido.addAll(recursionDFS(grafo, nodoAdyacente, nodosVisitados));
+            }
+        }
 
         return listaRecorrido;
     }
